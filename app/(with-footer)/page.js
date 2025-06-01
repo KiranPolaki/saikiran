@@ -49,15 +49,14 @@ export default function Home() {
           </div>
           <div className="text-xl mt-10">
             I create web so i am spiderman. my current primary field of work is
-            devops and yes i&apos;m a fullstack web developer. as of now i am
-            21, rn living in hyderabad. And now, exploring web3.
+            fullstack web development. rn living in hyderabad.
           </div>
           <div className="mt-10">
             <div className="flex justify-between items-center">
               <p className="text-gray-400 text-xl font-semibold tracking-wider p-0 selection:text-purple-900 mb-2">
                 EXPERIENCE
               </p>
-              <Link
+              {/* <Link
                 href={
                   "https://drive.google.com/drive/folders/1WmqvQuMXWEa_sWyTSloQyAF4Roikc5ok?usp=sharing"
                 }
@@ -80,7 +79,7 @@ export default function Home() {
                   <path d="M7 7h10v10" />
                   <path d="M7 17 17 7" />
                 </svg>
-              </Link>
+              </Link> */}
             </div>
             <WorkExperience />
           </div>
