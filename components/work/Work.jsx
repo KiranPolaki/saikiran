@@ -30,12 +30,14 @@ import {
   StackIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
+  ReaderIcon,
 } from "@radix-ui/react-icons";
 import { isMobile as detectMobile } from "react-device-detect";
 
 function Work() {
   const [projects, setProjects] = useState([
     {
+      id: "tfs-case-study",
       name: "TFS - Toshika Financial Services",
       description:
         "A comprehensive NBFC loan management platform featuring multi-tiered agent tracking, automated referral systems, and end-to-end loan processing. Built for both mobile and web to streamline loan operations, agent performance monitoring, and customer acquisition through structured referral networks.",
@@ -76,24 +78,27 @@ function Work() {
       ],
       ongoing: true,
       category: "Fintech Platform",
-      images: [tfs2, tfs3, tfs1], // Add your TFS screenshots here
+      images: [tfs2, tfs3, tfs1],
       img: tfs1,
       caseStudy: true,
-      caseStudyLink: "",
+      caseStudyLink: "/case-study/tfs",
     },
     {
+      id: "xzult-case-study",
       name: "Xzult Educations",
       description:
-        "A high-converting course landing page and learning platform that drives significant traffic and sales. Features modern design, seamless payment integration, and comprehensive analytics to optimize conversion rates.",
+        "An overseas education partner who bridges the gap between academic excellence and career success, helping students thrive both at home and abroad. Created a comprehensive website to generate leads with integrated Razorpay payments, WhatsApp communication, and advanced SEO optimization using Next.js.",
       detailedDescription:
-        "Built a performance-optimized landing page that consistently attracts 100+ daily visitors and converts at industry-leading rates. Implemented A/B testing capabilities, integrated advanced analytics for user behavior tracking, and created a streamlined checkout process that resulted in 300+ course sales within the first quarter.",
+        "Built a performance-optimized website for Xzult Educations, a leading overseas education consultancy. The platform serves as a comprehensive lead generation system with seamless payment integration, automated WhatsApp communication for instant student support, and advanced SEO strategies that significantly improved organic traffic and conversion rates.",
       features: [
-        "High-conversion landing design",
-        "A/B testing framework",
-        "Advanced analytics integration",
-        "Secure payment processing",
-        "SEO optimization",
+        "Lead generation optimization",
+        "Razorpay payment integration",
+        "WhatsApp API integration",
+        "Advanced SEO implementation",
         "Mobile-responsive design",
+        "Student inquiry management",
+        "Course catalog system",
+        "Consultation booking system",
       ],
       source: "",
       type: "Web",
@@ -102,15 +107,23 @@ function Work() {
       islive: true,
       start: "Jun 2023",
       end: "Aug 2023",
-      technology: ["nextjs", "razorpay", "magicui", "tailwind", "analytics"],
+      technology: [
+        "nextjs",
+        "razorpay",
+        "whatsapp-api",
+        "seo",
+        "tailwind",
+        "analytics",
+      ],
       ongoing: false,
       category: "Web Application",
       images: [xzult1, xzult2, xzult3],
       img: three,
       caseStudy: true,
-      caseStudyLink: "",
+      caseStudyLink: "/case-study/xzult",
     },
     {
+      id: "yantram-case-study",
       name: "NVcore - Yantram Medtech",
       description:
         "A comprehensive medical device integration solution that bridges hardware and software through seamless Android connectivity. The project involved fixing critical background processing issues, establishing reliable Bluetooth Low Energy communication protocols, and implementing automated deployment pipelines.",
@@ -140,12 +153,13 @@ function Work() {
       ],
       ongoing: true,
       category: "Mobile App",
-      images: [yantram, yantram2, yantram3], // Add more images here: [one, oneScreenshot2, oneScreenshot3]
+      images: [yantram, yantram2, yantram3],
       img: one,
       caseStudy: true,
-      caseStudyLink: "",
+      caseStudyLink: "/case-study/yantram",
     },
     {
+      id: "ngb-case-study",
       name: "NGB Mobile Learning Platform",
       description:
         "A feature-rich mobile Learning Management System built for Nawin Golden Boy's educational platform. Enables seamless course delivery, live streaming, community engagement, and secure payment processing with advanced video content protection.",
@@ -177,12 +191,13 @@ function Work() {
       ],
       ongoing: false,
       category: "Mobile App",
-      images: [ngb1, ngb3, ngb2], // Add more images here: [two, twoScreenshot2, twoScreenshot3]
+      images: [ngb1, ngb3, ngb2],
       img: two,
       caseStudy: true,
-      caseStudyLink: "",
+      caseStudyLink: "/case-study/ngb",
     },
     {
+      id: "gurucodes-case-study",
       name: "GuruCodes Academy",
       description:
         "A high-converting course landing page and learning platform that drives significant traffic and sales. Features modern design, seamless payment integration, and comprehensive analytics to optimize conversion rates.",
@@ -209,7 +224,7 @@ function Work() {
       images: [gurucodes, gurucodes2],
       img: three,
       caseStudy: true,
-      caseStudyLink: "",
+      caseStudyLink: "/case-study/gurucodes",
     },
   ]);
 
@@ -276,7 +291,7 @@ function Work() {
                                 alt={`${project.name} screenshot ${idx + 1}`}
                                 width={90}
                                 height={180}
-                                className="rounded-lg sm:rounded-xl object-cover shadow-lg border-2 sm:border-[3px] border-white dark:border-slate-600 bg-slate-200 dark:bg-slate-500" // Added bg for image loading
+                                className="rounded-lg sm:rounded-xl object-cover shadow-lg border-2 sm:border-[3px] border-white dark:border-slate-600 bg-slate-200 dark:bg-slate-500"
                                 placeholder="blur"
                                 blurDataURL={
                                   imgSrc.blurDataURL ||
@@ -320,13 +335,6 @@ function Work() {
                       </div>
                     )}
                   </div>
-
-                  {/* Category Badge */}
-                  {/* <div className="absolute top-4 right-4">
-                    <Badge className="bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300">
-                      {project.category}
-                    </Badge>
-                  </div> */}
                 </div>
 
                 {/* Content Section */}
@@ -404,6 +412,14 @@ function Work() {
 
                   {/* Action Buttons */}
                   <div className="flex gap-2 pt-2">
+                    {project.caseStudy && project.caseStudyLink && (
+                      <Link href={project.caseStudyLink} className="flex-1">
+                        <Badge className="flex gap-2 w-full bg-purple-100 text-purple-700 py-2 hover:bg-purple-200 dark:bg-purple-900 dark:text-purple-300 dark:hover:bg-purple-800 justify-center transition-all duration-200">
+                          <ReaderIcon className="w-4 h-4" />
+                          Case Study
+                        </Badge>
+                      </Link>
+                    )}
                     {project.hassource && project.source && (
                       <Link href={project.source} className="flex-1">
                         <Badge className="flex gap-2 w-full bg-gray-100 text-gray-700 py-2 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 justify-center transition-all duration-200">
@@ -509,7 +525,15 @@ function Work() {
                       </div>
 
                       {/* Mobile Action Buttons */}
-                      <div className="flex gap-2">
+                      <div className="flex gap-2 flex-wrap">
+                        {project.caseStudy && project.caseStudyLink && (
+                          <Link href={project.caseStudyLink}>
+                            <Badge className="flex gap-1 bg-purple-100 text-purple-700 py-1 hover:bg-purple-200 dark:bg-purple-900 dark:text-purple-300 text-xs">
+                              <ReaderIcon className="w-3 h-3" />
+                              Case Study
+                            </Badge>
+                          </Link>
+                        )}
                         {project.hassource && project.source && (
                           <Link href={project.source}>
                             <Badge className="flex gap-1 bg-gray-100 text-gray-700 py-1 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 text-xs">
