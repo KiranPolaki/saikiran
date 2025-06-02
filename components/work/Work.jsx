@@ -242,7 +242,7 @@ function Work() {
                 <div className="p-4">
                   <div className="flex gap-4 items-start">
                     {/* Mobile Image */}
-                    <div className="flex-shrink-0 relative">
+                    {/* <div className="flex-shrink-0 relative">
                       <Image
                         src={project.images[currentImageIndex[i] || 0]}
                         width={project.category === "Mobile App" ? 60 : 80}
@@ -269,7 +269,7 @@ function Work() {
                           ))}
                         </div>
                       )}
-                    </div>
+                    </div> */}
 
                     {/* Content */}
                     <div className="flex-1 min-w-0">
