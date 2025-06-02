@@ -45,8 +45,7 @@ function About() {
             yo, i&apos;m <strong>sai</strong>. building and breaking web
             applications is what i do for living. well, i&apos;m a{" "}
             <strong>full-stack web developer</strong>, but my current primary
-            field of work is <strong>devops</strong>. i currently reside in
-            hyderabad and am 22 years old.
+            field of work is <strong>devops</strong>.
           </p>
           <div className="mt-7 ext-start text-gray-300 text-md font-semibold tracking-wide p-0 selection:text-purple-900">
             CURRENT

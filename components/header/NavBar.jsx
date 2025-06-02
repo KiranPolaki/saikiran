@@ -129,9 +129,9 @@ function NavBar() {
                         work
                       </div>
                     </Link>
-                    <div className="cursor-pointer font-semibold font-inter">
+                    {/* <div className="cursor-pointer font-semibold font-inter">
                       timeline
-                    </div>
+                    </div> */}
                     <Link href={"/about"}>
                       <div className="cursor-pointer font-semibold font-inter">
                         about
@@ -170,9 +170,9 @@ function NavBar() {
                 work
               </div>
             </Link>
-            <div className="cursor-pointer font-semibold font-inter">
+            {/* <div className="cursor-pointer font-semibold font-inter">
               timeline
-            </div>
+            </div> */}
             <Link href={"/about"}>
               <div className="cursor-pointer font-semibold font-inter">
                 about
